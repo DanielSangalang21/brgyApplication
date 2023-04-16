@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2022-08-18T00:47:06 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BarangayClearance" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="622914c6-c3aa-482f-8a30-017015e515fc">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="BACKGROUND_IMAGE" class="java.lang.String">
+		<parameterDescription><![CDATA[source for image]]></parameterDescription>
+	</parameter>
+	<parameter name="LOGO" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="BARANGAY_CAPTAIN" class="java.lang.String"/>
+	<parameter name="OR_NO" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="DATE_ISSUED" class="java.util.Date">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[new Date()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="BARANGAY" class="java.lang.String"/>
+	<parameter name="APPLICANT_IMAGE" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="age" class="java.lang.Integer"/>
+	<field name="firstname" class="java.lang.String"/>
+	<field name="sex" class="java.lang.String"/>
+	<field name="fullName" class="java.lang.String"/>
+	<background>
+		<band height="78" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="88" splitType="Stretch">
+			<staticText>
+				<reportElement key="" positionType="FixRelativeToBottom" x="162" y="3" width="230" height="20" uuid="34a4a63c-b24a-4129-bab2-cacea882298b"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Republic of the Philippines]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" positionType="FixRelativeToBottom" x="162" y="18" width="230" height="20" uuid="450fb8db-cc68-4f92-bf22-40dcc5b95741"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Province of Batangas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" positionType="FixRelativeToBottom" x="162" y="33" width="230" height="20" uuid="dcf7a699-512f-4005-9d3c-b55080cf1398"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[City of Tanauan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" positionType="FixRelativeToBottom" x="162" y="49" width="230" height="31" forecolor="#00C4FF" uuid="f43037af-a79b-442f-aa5e-26670943cd4a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Rage Italic" size="21"/>
+				</textElement>
+				<text><![CDATA[Barangay Talaga]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement x="3" y="3" width="77" height="77" uuid="fe61b804-86bc-46c0-9d8d-feda324812b5"/>
+				<imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement key="" positionType="FixRelativeToBottom" x="163" y="0" width="230" height="17" forecolor="#1D1D1D" uuid="1ae768a4-bf42-4e78-80e2-a0a94034424b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OFFICE OF THE BARANGAY CAPTAIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" positionType="FixRelativeToBottom" x="154" y="19" width="247" height="28" forecolor="#1D1D1D" uuid="490bb6ea-5d1f-4808-a15e-ec1de86aa192"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="17" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BARANGAY CLEARANCE]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="218" splitType="Stretch">
+			<staticText>
+				<reportElement key="" positionType="FixRelativeToBottom" x="16" y="70" width="230" height="20" uuid="5c2a9e84-742b-4493-8012-a548f8a8e71b"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TO WHOM IT MAY CONCERN:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="92" width="450" height="90" uuid="d6143d64-8814-4b26-8413-b05aafb13731"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Si " +$F{fullName}+ " na " +$F{age}+ " taong gulang ay mabait at walang halong kasalanan sa barangay na ito"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="184" width="158" height="23" uuid="f0142ce0-d7a8-4f51-b12d-e27142a9ea55"/>
+				<textElement>
+					<font isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{BARANGAY_CAPTAIN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="373" y="198" width="100" height="13" uuid="0db9a5e0-49f8-45a7-b092-7d01e3005312"/>
+				<text><![CDATA[Barangay Captain]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement x="417" y="5" width="77" height="77" uuid="2981cae6-82d9-4228-9328-9da6ebb97be5"/>
+				<imageExpression><![CDATA[$P{APPLICANT_IMAGE}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="96" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement x="16" y="38" width="175" height="21" uuid="deb68281-e5da-47fa-81df-f7ac2c29b1ef"/>
+				<text><![CDATA[Doc. Stamp:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="15" y="23" width="193" height="16" uuid="86507aac-2143-4181-84ed-d61a1d8b9eb1"/>
+				<textFieldExpression><![CDATA["Date Issued: "+$P{DATE_ISSUED}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="8" width="195" height="16" uuid="9d321d5b-0eca-4615-85fe-aff1510cb6f6"/>
+				<textFieldExpression><![CDATA["O.R. NO: "+$P{OR_NO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
