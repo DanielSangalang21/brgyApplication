@@ -38,7 +38,7 @@
 							<a href="#" class="btn btn-danger mt-1">Delete Profile</a>
 						</div>
 						<div class="px-3 py-2 shadow p-3 bg-body">
-							</label> <h4 class="display-6">${applicant.fullName}</h4>
+							</label> <h4 class="display-6"><b>${applicant.applicantNo}</b> | ${applicant.fullName}</h4>
 							<div class="row mt-3">
 								<label>Birthdate</label>
 								<label class="lead">${applicant.birthDate}</label>

@@ -60,6 +60,21 @@ public class ApplicantService {
 
 		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(applicants);
 		JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, dataSource);
+		
+		//create direcotory if not present
+		try {
+			File fileDir = new File(REPORT_PATH);
+			if (!fileDir.exists()) {
+				if (!fileDir.mkdirs()) {
+					//filePath = REPORT_PATH + file.pathSeparator + applicant.getFirstname() + applicant.getLastname() + ".pdf";  // will use FileHelper.fileNameGenerator()
+					//return;
+				}
+			}
+		} catch (Exception e) {
+			//insertJobDetail(jobExecutionContext, Error.OUTPUT_DIRECTORY_CREATION);
+			//return;
+		}
+		
 		String filePath = REPORT_PATH + applicant.getFirstname() + applicant.getLastname() + ".pdf"; // will use
 																										// FileHelper.fileNameGenerator()
 		JasperExportManager.exportReportToPdfFile(jasperPrint, filePath);

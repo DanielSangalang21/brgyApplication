@@ -33,7 +33,7 @@
 						<img class="card-img-top" width="200" height="350"
 							alt="image" src="${applicant.image}">
 						<div class="card-body">
-							<div class="card-title">${applicant.fullName}</div>
+							<div class="card-title"><b>${applicant.applicantNo}</b> | ${applicant.fullName}</div>
 							<!-- <p class="card-text">something is going here</p> -->
 							<a href="<c:url value="/applicant/${applicant.applicantNo}"/>" class="btn btn-primary"> <i class="fa">See profile</i></a>
 						</div>
