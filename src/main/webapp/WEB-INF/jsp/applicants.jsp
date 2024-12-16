@@ -47,7 +47,7 @@
 	
 		function search() {
 			let searchText = $('#searchField').val()
-			window.location.href ="${pageContext.request.contextPath}/applicant/all?name="+searchText+"";
+			window.location.href ="${pageContext.request.contextPath}/applicant/"+searchText+"";
 		}
 	</script>
 </body>

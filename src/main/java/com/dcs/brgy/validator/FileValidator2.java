@@ -3,13 +3,19 @@ package com.dcs.brgy.validator;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.dcs.brgy.util.MessageResolver;
 import com.dcs.brgy.validator.annotation.FileConstraint;
 
+@Component
 public class FileValidator2 implements ConstraintValidator<FileConstraint, MultipartFile> {
 
+	@Autowired
+	private MessageResolver messageResolver;
+	
 	@Override
 	public boolean isValid(MultipartFile file, ConstraintValidatorContext context) {
 		// TODO Auto-generated method stub
@@ -24,7 +30,7 @@ public class FileValidator2 implements ConstraintValidator<FileConstraint, Multi
 				  file.getOriginalFilename().length()).toLowerCase();
 		
 		if(!fileType.equals("img") && !fileType.equals("jpg") && !fileType.equals("jpeg") && !fileType.equals("png")) { 
-			context.buildConstraintViolationWithTemplate(MessageResolver.resolve("unsupported.file", new Object[]{"image"})).addConstraintViolation();
+			context.buildConstraintViolationWithTemplate(messageResolver.resolve("unsupported.file", new Object[]{"image"})).addConstraintViolation();
 			return false;
 		}
 		
